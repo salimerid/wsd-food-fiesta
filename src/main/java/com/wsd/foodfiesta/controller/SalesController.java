@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping(path = "/api/sales", produces = {"application/json"})
+@RequestMapping("/api/sales")
 public class SalesController {
 
     @Autowired

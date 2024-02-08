@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/orders", produces = {"application/json"})
+@RequestMapping("/api/orders")
 public class OrderController {
+
     @Autowired
     private OrderService orderService;
 
     //1. API to return the order list of the current day:
-    @GetMapping("/orders/current-day")
+    @GetMapping("/v1/current-day")
     public ResponseEntity<List<Order>> getCurrentDayOrders() {
         return new ResponseEntity<>(orderService.getOrderListForCurrentDay(), HttpStatus.OK);
     }

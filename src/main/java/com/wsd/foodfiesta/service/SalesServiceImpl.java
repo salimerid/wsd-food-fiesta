@@ -20,7 +20,8 @@ public class SalesServiceImpl implements SalesService{
     public BigDecimal getTotalSaleAmountForCurrentDay() {
         List<Order> orders = orderRepository.findByOrderDate(LocalDate.now());
         log.info("start calculate totalSaleAmount ");
-        return orders.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+        //return orders.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+        return BigDecimal.ZERO;
     }
 
     @Override

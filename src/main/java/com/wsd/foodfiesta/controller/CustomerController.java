@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/customers", produces = {"application/json"})
+@RequestMapping("/api/customers")
 public class CustomerController {
 
     @Autowired
