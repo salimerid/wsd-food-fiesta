@@ -22,12 +22,14 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<Order> getOrderListByCustomerId(Long customerId) {
+        log.info("Getting customer customerId: {}", customerId);
         Customer customer = customerRepository.findById(customerId).get();
         return orderRepository.findByCustomer(customer);
     }
 
     @Override
     public List<Customer> getAllCustomerList() {
+        log.info("Getting all customers");
         return customerRepository.findAll();
     }
 }
